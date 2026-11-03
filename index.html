@@ -8,96 +8,33 @@
     <link rel="stylesheet" href="gamesdesign.css">
     <link rel="icon" href="assets/gGames.jpg">
     <style>
-        .announcement-banner {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            margin: 28px 0 0;
-            padding: 22px 26px;
-            border: 1px solid rgba(183, 173, 255, 0.3);
-            border-radius: 18px;
-            color: #f3f5fb;
-            background: linear-gradient(110deg, #242044, #191d32 75%);
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .announcement-banner .megaphone {
-            display: grid;
-            width: 54px;
-            height: 54px;
-            flex: 0 0 54px;
-            place-items: center;
-            border-radius: 15px;
-            color: #17152a;
-            background: #b7adff;
-            font-size: 27px;
-        }
-
-        .announcement-banner .announcement-label {
-            display: block;
-            margin-bottom: 5px;
-            color: #b7adff;
-            font-size: 10px;
-            font-weight: 800;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-
-        .announcement-banner p {
-            margin: 0;
-            font-size: clamp(17px, 2.5vw, 23px);
-            font-weight: 750;
-            letter-spacing: -0.02em;
-        }
-
-        @media (max-width: 700px) {
-            .announcement-banner { gap: 14px; margin-top: 20px; padding: 17px; }
-            .announcement-banner .megaphone { width: 46px; height: 46px; flex-basis: 46px; font-size: 23px; }
-        }
+        .announcement-banner { display:flex; align-items:center; gap:18px; margin:28px 0 0; padding:22px 26px; border:1px solid rgba(183,173,255,.3); border-radius:18px; color:#f3f5fb; background:linear-gradient(110deg,#242044,#191d32 75%); box-shadow:0 12px 35px rgba(0,0,0,.2); }
+        .announcement-banner .megaphone { display:grid; width:54px; height:54px; flex:0 0 54px; place-items:center; border-radius:15px; color:#17152a; background:#b7adff; font-size:27px; }
+        .announcement-banner .announcement-label { display:block; margin-bottom:5px; color:#b7adff; font-size:10px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+        .announcement-banner p { margin:0; font-size:clamp(17px,2.5vw,23px); font-weight:750; letter-spacing:-.02em; }
+        @media (max-width:700px) { .announcement-banner { gap:14px; margin-top:20px; padding:17px; } .announcement-banner .megaphone { width:46px; height:46px; flex-basis:46px; font-size:23px; } }
     </style>
+    <script src="game-cards.js"></script>
     <script src="script.js"></script>
 </head>
 <body>
     <header class="site-header"></header>
-
     <main>
         <aside class="announcement-banner" aria-label="Announcement">
             <span class="megaphone" aria-hidden="true">📣</span>
-            <div>
-                <span class="announcement-label">Announcement</span>
-                <p>Welcome to new website.</p>
-            </div>
+            <div><span class="announcement-label">Announcement</span><p>Welcome to new website.</p></div>
         </aside>
-
         <section class="hero" aria-labelledby="page-title">
             <div class="hero-copy">
                 <p class="eyebrow"><span class="status-dot"></span> YOUR NEXT FAVORITE GAME IS HERE</p>
                 <h1 id="page-title">Press play.<br><span>Find your fun.</span></h1>
                 <p class="hero-description">A little break goes a long way. Explore the collection and jump into a game.</p>
-                <div class="hero-meta">
-                    <span id="gamesnumber" class="game-count">Games: loading…</span>
-                    <span class="meta-divider" aria-hidden="true"></span>
-                    <span>Fresh picks, ready to play</span>
-                </div>
+                <div class="hero-meta"><span id="gamesnumber" class="game-count">Games: loading…</span><span class="meta-divider" aria-hidden="true"></span><span>Fresh picks, ready to play</span></div>
             </div>
-            <div class="hero-art" aria-hidden="true">
-                <div class="art-orbit orbit-one"></div>
-                <div class="art-orbit orbit-two"></div>
-                <div class="art-spark spark-one">✦</div>
-                <div class="art-spark spark-two">✧</div>
-                <div class="art-card"><span>▶</span></div>
-            </div>
+            <div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-spark spark-one">✦</div><div class="art-spark spark-two">✧</div><div class="art-card"><span>▶</span></div></div>
         </section>
-
         <section class="library" aria-label="Game library">
-            <div class="section-heading">
-                <div>
-                    <p class="eyebrow">THE ARCADE</p>
-                    <h2>Pick your next game</h2>
-                </div>
-                <p class="section-note">Search the collection or browse a category.</p>
-            </div>
-
+            <div class="section-heading"><div><p class="eyebrow">THE ARCADE</p><h2>Pick your next game</h2></div><p class="section-note">Search the collection or browse a category.</p></div>
             <nav class="category-nav" aria-label="Game categories">
                 <a href="index.html" class="category-link active" aria-current="page">All games</a>
                 <a href="papasalley.html" id="papasalley" class="category-link">Papa’s Alley</a>
@@ -108,19 +45,11 @@
                 <a href="calm.html" id="calmlink" class="category-link">Calm</a>
                 <a href="shooting.html" id="shootinglink" class="category-link">Shooting</a>
             </nav>
-
-            <label class="search-wrap" for="searchInput">
-                <span class="search-icon" aria-hidden="true">⌕</span>
-                <input type="search" id="searchInput" placeholder="Search games…" autocomplete="off">
-                <span class="search-hint">Find a game</span>
-            </label>
-
+            <label class="search-wrap" for="searchInput"><span class="search-icon" aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="Search games…" autocomplete="off"><span class="search-hint">Find a game</span></label>
             <div class="game-container" id="gameContainer" aria-live="polite"></div>
         </section>
     </main>
-
     <footer class="site-footer"></footer>
-
     <button id="scrollToTopBtn" type="button" aria-label="Back to top">↑ <span>Back to top</span></button>
 </body>
 </html>
