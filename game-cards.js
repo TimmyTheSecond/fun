@@ -1,5 +1,6 @@
 // Shared game-card rendering for the home page and category pages.
 (function () {
+  const FEEDBACK_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSduSqSDUYzhNrz-5Ma_DIyV7inqtkY7JyVpPemY4zXF_Qyd4g/viewform?usp=publish-editor';
   const style = document.createElement('style');
   style.textContent = `
     .game-image-wrap { position: relative; }
@@ -42,6 +43,17 @@
         }
       }
     });
+
+    const header = document.querySelector('.site-header');
+    if (header && !header.querySelector('.feedback-link')) {
+      const feedbackLink = document.createElement('a');
+      feedbackLink.className = 'backup-link feedback-link';
+      feedbackLink.href = FEEDBACK_FORM_URL;
+      feedbackLink.target = '_blank';
+      feedbackLink.rel = 'noopener noreferrer';
+      feedbackLink.textContent = 'Feedback ↗';
+      header.appendChild(feedbackLink);
+    }
   });
 
   function createGameCard(game) {
@@ -57,7 +69,7 @@
     gameLink.appendChild(image);
     const reportLink = document.createElement('a');
     reportLink.className = 'game-report-link';
-    reportLink.href = `report.html?game=${encodeURIComponent(game.title)}`;
+    reportLink.href = FEEDBACK_FORM_URL;
     reportLink.textContent = '!';
     reportLink.setAttribute('aria-label', `Report ${game.title}`);
     reportLink.title = `Report ${game.title}`;
