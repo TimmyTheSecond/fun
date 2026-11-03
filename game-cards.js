@@ -29,19 +29,13 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.brand').forEach(brand => {
-      const text = brand.querySelector('.brand-copy');
-      if (text) text.innerHTML = 'TIM\'S <span class="brand-accent">GAMES</span>';
-      else {
-        const mark = brand.querySelector('.brand-mark');
-        if (mark) {
-          const copy = document.createElement('span');
-          copy.className = 'brand-copy';
-          copy.innerHTML = 'TIM\'S <span class="brand-accent">GAMES</span>';
-          mark.insertAdjacentElement('afterend', copy);
-        } else {
-          brand.textContent = "Tim's Games";
-        }
-      }
+      const mark = brand.querySelector('.brand-mark');
+      brand.replaceChildren();
+      if (mark) brand.appendChild(mark);
+      const copy = document.createElement('span');
+      copy.className = 'brand-copy';
+      copy.textContent = 'Classes';
+      brand.appendChild(copy);
     });
 
     const header = document.querySelector('.site-header');
@@ -70,6 +64,8 @@
     const reportLink = document.createElement('a');
     reportLink.className = 'game-report-link';
     reportLink.href = FEEDBACK_FORM_URL;
+    reportLink.target = '_blank';
+    reportLink.rel = 'noopener noreferrer';
     reportLink.textContent = '!';
     reportLink.setAttribute('aria-label', `Report ${game.title}`);
     reportLink.title = `Report ${game.title}`;
