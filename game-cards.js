@@ -37,17 +37,6 @@
       copy.textContent = 'Classes';
       brand.appendChild(copy);
     });
-
-    const header = document.querySelector('.site-header');
-    if (header && !header.querySelector('.feedback-link')) {
-      const feedbackLink = document.createElement('a');
-      feedbackLink.className = 'backup-link feedback-link';
-      feedbackLink.href = FEEDBACK_FORM_URL;
-      feedbackLink.target = '_blank';
-      feedbackLink.rel = 'noopener noreferrer';
-      feedbackLink.textContent = 'Feedback ↗';
-      header.appendChild(feedbackLink);
-    }
   });
 
   function createGameCard(game) {

@@ -12,6 +12,8 @@
         .announcement-banner .megaphone { display:grid; width:54px; height:54px; flex:0 0 54px; place-items:center; border-radius:15px; color:#17152a; background:#b7adff; font-size:27px; }
         .announcement-banner .announcement-label { display:block; margin-bottom:5px; color:#b7adff; font-size:10px; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
         .announcement-banner p { margin:0; font-size:clamp(17px,2.5vw,23px); font-weight:750; letter-spacing:-.02em; }
+        .announcement-banner a { color:#b7adff; text-decoration:underline; text-underline-offset:3px; }
+        .announcement-banner a:hover { color:#fff; }
         @media (max-width:700px) { .announcement-banner { gap:14px; margin-top:20px; padding:17px; } .announcement-banner .megaphone { width:46px; height:46px; flex-basis:46px; font-size:23px; } }
     </style>
     <script src="game-cards.js"></script>
@@ -21,7 +23,7 @@
     <main>
         <aside class="announcement-banner" aria-label="Announcement">
             <span class="megaphone" aria-hidden="true">📣</span>
-            <div><span class="announcement-label">Announcement</span><p>Welcome to new website.</p></div>
+            <div><span class="announcement-label">Announcement</span><p>If you have a report or a suggestion, please tell us <a href="https://docs.google.com/forms/d/e/1FAIpQLSduSqSDUYzhNrz-5Ma_DIyV7inqtkY7JyVpPemY4zXF_Qyd4g/viewform" target="_blank" rel="noopener noreferrer">here</a></p></div>
         </aside>
         <section class="hero" aria-labelledby="page-title">
             <div class="hero-copy">
@@ -43,7 +45,6 @@
                 <a href="skill.html" id="skilllink" class="category-link">Skill</a>
                 <a href="calm.html" id="calmlink" class="category-link">Calm</a>
                 <a href="shooting.html" id="shootinglink" class="category-link">Shooting</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSduSqSDUYzhNrz-5Ma_DIyV7inQtkY7JyVpPemY4zXF_Qyd4g/viewform" class="category-link" target="_blank" rel="noopener noreferrer">Feedback ✨</a>
             </nav>
             <label class="search-wrap" for="searchInput"><span class="search-icon" aria-hidden="true">⌕</span><input type="search" id="searchInput" placeholder="Search games…" autocomplete="off"><span class="search-hint">Find a game</span></label>
             <div class="game-container" id="gameContainer" aria-live="polite"></div>
