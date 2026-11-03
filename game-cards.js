@@ -69,6 +69,8 @@
     reportLink.textContent = '!';
     reportLink.setAttribute('aria-label', `Report ${game.title}`);
     reportLink.title = `Report ${game.title}`;
+    // Avoid leaving the card focused after opening the form in a new tab.
+    reportLink.addEventListener('click', () => reportLink.blur());
     imageWrap.append(gameLink, reportLink);
     const titleLink = document.createElement('a');
     titleLink.href = game.link;
