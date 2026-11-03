@@ -1,6 +1,6 @@
 // Shared game-card rendering for the home page and category pages.
 (function () {
-  const FEEDBACK_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSduSqSDUYzhNrz-5Ma_DIyV7inqtkY7JyVpPemY4zXF_Qyd4g/viewform?usp=publish-editor';
+  const FEEDBACK_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSduSqSDUYzhNrz-5Ma_DIyV7inqtkY7JyVpPemY4zXF_Qyd4g/viewform';
   const style = document.createElement('style');
   style.textContent = `
     .game-image-wrap { position: relative; }
