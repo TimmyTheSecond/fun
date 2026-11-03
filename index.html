@@ -7,12 +7,68 @@
     <title>Classes | Game Arcade</title>
     <link rel="stylesheet" href="gamesdesign.css">
     <link rel="icon" href="assets/gGames.jpg">
+    <style>
+        .announcement-banner {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin: 28px 0 0;
+            padding: 22px 26px;
+            border: 1px solid rgba(183, 173, 255, 0.3);
+            border-radius: 18px;
+            color: #f3f5fb;
+            background: linear-gradient(110deg, #242044, #191d32 75%);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .announcement-banner .megaphone {
+            display: grid;
+            width: 54px;
+            height: 54px;
+            flex: 0 0 54px;
+            place-items: center;
+            border-radius: 15px;
+            color: #17152a;
+            background: #b7adff;
+            font-size: 27px;
+        }
+
+        .announcement-banner .announcement-label {
+            display: block;
+            margin-bottom: 5px;
+            color: #b7adff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .announcement-banner p {
+            margin: 0;
+            font-size: clamp(17px, 2.5vw, 23px);
+            font-weight: 750;
+            letter-spacing: -0.02em;
+        }
+
+        @media (max-width: 700px) {
+            .announcement-banner { gap: 14px; margin-top: 20px; padding: 17px; }
+            .announcement-banner .megaphone { width: 46px; height: 46px; flex-basis: 46px; font-size: 23px; }
+        }
+    </style>
     <script src="script.js"></script>
 </head>
 <body>
     <header class="site-header"></header>
 
     <main>
+        <aside class="announcement-banner" aria-label="Announcement">
+            <span class="megaphone" aria-hidden="true">📣</span>
+            <div>
+                <span class="announcement-label">Announcement</span>
+                <p>Welcome to new website.</p>
+            </div>
+        </aside>
+
         <section class="hero" aria-labelledby="page-title">
             <div class="hero-copy">
                 <p class="eyebrow"><span class="status-dot"></span> YOUR NEXT FAVORITE GAME IS HERE</p>
@@ -59,7 +115,6 @@
                 <span class="search-hint">Find a game</span>
             </label>
 
-            <p id="announcment" class="announcement"><span class="announcement-icon" aria-hidden="true">✦</span> Welcome to the new website!</p>
             <div class="game-container" id="gameContainer" aria-live="polite"></div>
         </section>
     </main>
