@@ -19,7 +19,6 @@
     .game-image-wrap .game-report-link:focus-visible { opacity: 1; visibility: visible; outline: 3px solid #fff; outline-offset: 3px; }
     @media (hover: none) { .game-image-wrap .game-report-link { opacity: 1; visibility: visible; transform: none; } }
     @media (prefers-reduced-motion: reduce) { .game-image-wrap .game-report-link { transition: none; } }
-    .brand-copy { white-space: nowrap; }
     .category-page-header { margin: 32px 0 24px; }
     .category-page-header h1 { margin-top: 24px; font-size: clamp(32px, 5vw, 48px); }
     .back-home-link { display: inline-flex; align-items: center; gap: 8px; color: #b7adff; font-size: 13px; font-weight: 700; text-decoration: none; }
@@ -28,15 +27,8 @@
   document.head.appendChild(style);
 
   document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.brand').forEach(brand => {
-      const mark = brand.querySelector('.brand-mark');
-      brand.replaceChildren();
-      if (mark) brand.appendChild(mark);
-      const copy = document.createElement('span');
-      copy.className = 'brand-copy';
-      copy.textContent = 'Classes';
-      brand.appendChild(copy);
-    });
+    // Category pages keep the navigation header, but omit the site-name branding.
+    document.querySelectorAll('.site-header .brand').forEach(brand => brand.remove());
   });
 
   function createGameCard(game) {
